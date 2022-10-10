@@ -29,8 +29,9 @@ import com.android.systemui.qs.tiles.AntiFlickerTile;
 import com.android.systemui.qs.tiles.AODTile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
-import com.android.systemui.qs.tiles.CameraToggleTile;
+import com.android.systemui.qs.tiles.CPUInfoTile;
 import com.android.systemui.qs.tiles.CaffeineTile;
+import com.android.systemui.qs.tiles.CameraToggleTile;
 import com.android.systemui.qs.tiles.CastTile;
 import com.android.systemui.qs.tiles.CellularTile;
 import com.android.systemui.qs.tiles.ColorCorrectionTile;
@@ -49,6 +50,7 @@ import com.android.systemui.qs.tiles.LocationTile;
 import com.android.systemui.qs.tiles.MicrophoneToggleTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
+import com.android.systemui.qs.tiles.OnTheGoTile;
 import com.android.systemui.qs.tiles.OneHandedModeTile;
 import com.android.systemui.qs.tiles.QRCodeScannerTile;
 import com.android.systemui.qs.tiles.PowerShareTile;
@@ -59,6 +61,7 @@ import com.android.systemui.qs.tiles.ReadingModeTile;
 import com.android.systemui.qs.tiles.RefreshRateTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
 import com.android.systemui.qs.tiles.ScreenRecordTile;
+import com.android.systemui.qs.tiles.SmartPixelsTile;
 import com.android.systemui.qs.tiles.SoundSearchTile;
 import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.SyncTile;
@@ -134,7 +137,10 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
             Provider<DataSwitchTile> dataSwitchTileProvider,
             Provider<AODTile> aodTileProvider,
             Provider<RefreshRateTile> refreshRateTileProvider,
-            Provider<FPSInfoTile> fpsInfoTileProvider) {
+            Provider<FPSInfoTile> fpsInfoTileProvider,
+            Provider<SmartPixelsTile> smartPixelsTileProvider,
+            Provider<OnTheGoTile> onTheGoTileProvider,
+            Provider<CPUInfoTile> cpuInfoTileProvider) {
         super(qsHostLazy,
                 customTileBuilderProvider,
                 wifiTileProvider,
@@ -183,7 +189,10 @@ public class QSFactoryImplGoogle extends QSFactoryImpl {
                 dataSwitchTileProvider,
                 aodTileProvider,
                 refreshRateTileProvider,
-                fpsInfoTileProvider);
+                fpsInfoTileProvider,
+                smartPixelsTileProvider,
+                onTheGoTileProvider,
+                cpuInfoTileProvider);
         mReverseChargingTileProvider = reverseChargingTileProvider;
         mBatterySaverTileGoogleProvider = batterySaverTileGoogleProvider;
     }
